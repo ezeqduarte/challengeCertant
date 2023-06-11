@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <nav className="navbar">
-        <p>Pokedex - Lite</p>
+        <p>Pókedex lite</p>
         {logged && <p>Cerrar sesión</p>}
       </nav>
       <Main>
