@@ -19,7 +19,7 @@ const useLoginStore = create(
       },
     }),
     {
-      name: "login-storage",
+      name: "pokemon-storage",
       storage: createJSONStorage(() => sessionStorage),
     }
   )

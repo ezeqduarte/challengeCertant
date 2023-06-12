@@ -10,12 +10,14 @@ import {
   useNewPokemon,
   usePokemonsUser,
 } from "../../store/usePokemonsStore";
+import PopUpNewPokemon from "../../components/PopUpNewPokemon/PopUpNewPokemon";
 
 export default function Home() {
   const pokemonRequest = usePokemonsRequest();
   const setPokemons = useGetPokemons();
   const userId = useUserId();
   const [refresh, setRefresh] = useState(false);
+  const [popUp, setPopUp] = useState(false);
 
   const pokemonsUserGlobal = usePokemonsUser();
 
@@ -66,12 +68,24 @@ export default function Home() {
           <CardPokemons pokemon={pokemon} />
         ))}
       </div>
-      <button
-        onClick={newPokemonAction}
-        className="sticky hover:bg-green-300 left-[107rem] bottom-5 p-5 bg-green-200 border rounded-full font-bold text-[1rem]"
-      >
-        Nuevo Pokemon +
-      </button>
+      {popUp && <PopUpNewPokemon />}
+      {popUp ? (
+        <button
+          /* onClick={newPokemonAction} */
+          onClick={() => setPopUp(!popUp)}
+          className="sticky hover:bg-red-300 left-[107rem] bottom-5 p-5 bg-red-200 border rounded-full font-bold text-[1rem]"
+        >
+          Cerrar ventana X
+        </button>
+      ) : (
+        <button
+          /* onClick={newPokemonAction} */
+          onClick={() => setPopUp(!popUp)}
+          className="sticky hover:bg-green-300 left-[107rem] bottom-5 p-5 bg-green-200 border rounded-full font-bold text-[1rem]"
+        >
+          Nuevo Pokemon +
+        </button>
+      )}
     </>
   );
 }
