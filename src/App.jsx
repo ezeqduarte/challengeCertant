@@ -13,7 +13,10 @@ function App() {
   return (
     <>
       <nav className="flex justify-between items-center absolute w-full px-[3rem] py-2rem gap-[20px]">
-        <p className="text-[20px] md:text-[35px] font-extrabold">Pókedex lite</p>
+        <p className="text-[20px] md:text-[35px] font-extrabold">
+          Pókedex lite
+        </p>
+
         {loggedIn ? (
           <NavLink
             className={"flex flex-col justify-center items-center"}
