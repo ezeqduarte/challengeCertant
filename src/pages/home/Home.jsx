@@ -63,12 +63,19 @@ export default function Home() {
 
   return (
     <>
+      {popUp && <PopUpNewPokemon />}
+
+      <h2 className="text-center font-bold text-[28px] pt-[8rem]">
+        ¡Hello Pokémon Trainer!
+      </h2>
+      <p className="text-center font-thin text-[23px]">
+        Here is your list of acquired Pokémon. Feel free to take a look!{" "}
+      </p>
       <div className="container mx-auto pt-[5rem] pb-5 gap-3 flex justify-center items-center flex-wrap">
         {pokemonsUserGlobal.map((pokemon) => (
           <CardPokemons pokemon={pokemon} />
         ))}
       </div>
-      {popUp && <PopUpNewPokemon />}
       {popUp ? (
         <button
           /* onClick={newPokemonAction} */
