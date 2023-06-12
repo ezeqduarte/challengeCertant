@@ -35,13 +35,6 @@
   align-items: center;
 }
 
-.form-login svg {
-  position: absolute;
-  right: -35px;
-  top: 2px;
-  cursor: pointer;
-}
-
 .form-login button:active {
   transform: scale(0.97);
 }

@@ -33,14 +33,33 @@ export default function Login() {
 
   return (
     <section className="section-login flex flex-col gap-10 ">
-      <h2>¡Welcome to Pokedex Lite!</h2>
+      <h2 className="text-[28px]">¡Welcome to Pókedex Lite!</h2>
       <form onSubmit={submitForm} className="form-login">
-        <label>
-          <input ref={usernameValue} placeholder="Username" type="text" />
+        <label class="block">
+          <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+            Username
+          </span>
+          <input
+            type="text"
+            ref={usernameValue}
+            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            placeholder="Insert your username"
+          />
         </label>
-        <fieldset>
+        <fieldset className="relative">
           <label>
-            <input ref={passwordValue} placeholder="Password" type={password} />
+            <label class="block">
+              <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                Password
+              </span>
+              <input
+                type={password}
+                ref={passwordValue}
+                className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 "
+                placeholder="Insert your password"
+              />
+            </label>
+
             {password === "password" ? (
               <svg
                 width="24px"
@@ -51,6 +70,7 @@ export default function Login() {
                 xmlns="http://www.w3.org/2000/svg"
                 color="#000000"
                 onClick={seePassword}
+                className="absolute bottom-[4px] right-1 cursor-pointer"
               >
                 <path
                   d="M12 14a2 2 0 100-4 2 2 0 000 4z"
@@ -76,6 +96,7 @@ export default function Login() {
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 color="#000000"
+                className="absolute bottom-[4px] right-1 cursor-pointer"
                 onClick={seePassword}
               >
                 <path
@@ -97,7 +118,12 @@ export default function Login() {
           </label>
         </fieldset>
 
-        <button type="submit">Login</button>
+        <button
+          type="submit"
+          className="bg-zinc-600 hover:bg-zinc-700 mt-[10px] text-white font-bold"
+        >
+          Login
+        </button>
       </form>
     </section>
   );

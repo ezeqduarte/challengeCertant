@@ -1,9 +1,54 @@
 const pokemonData = [
   {
+    id: 0,
+    name: "Squirtle",
+    lvl: 5,
+    evolutions: [
+      {
+        name: "Wartortle",
+        type: "Water",
+        lvl: 16,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png",
+      },
+      {
+        name: "Blastoise",
+        type: "Water",
+        lvl: 36,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png",
+      },
+    ],
+    abilities: [
+      {
+        name: "Torrent",
+        description: "Powers up Water-type moves when the Pokémon's HP is low.",
+      },
+    ],
+    type: ["Water"],
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+  },
+  {
     id: 1,
-    name: "Charizard",
-    lvl: 50,
-    evolutionId: 1,
+    name: "Charmander",
+    lvl: 5,
+    evolutions: [
+      {
+        name: "Charmeleon",
+        type: "Fire",
+        lvl: 16,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png",
+      },
+      {
+        name: "Charizard",
+        type: "Fire",
+        lvl: 36,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+      },
+    ],
     abilities: [
       {
         name: "Blaze",
@@ -12,64 +57,133 @@ const pokemonData = [
     ],
     type: ["Fire", "Flying"],
     image:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
   },
   {
     id: 2,
-    name: "Gyarados",
-    lvl: 45,
-    evolutionId: 2,
-    abilities: [
-      { name: "Intimidate", description: "Lowers the opponent's Attack stat." },
-    ],
-    type: ["Water", "Flying"],
-    image:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png",
-  },
-  {
-    id: 3,
-    name: "Alakazam",
-    lvl: 40,
-    evolutionId: 3,
-    abilities: [
+    name: "Bulbasaur",
+    lvl: 5,
+    evolutions: [
       {
-        name: "Synchronize",
-        description: "Passes on a burn, poison, or paralysis to the foe.",
+        name: "Ivysaur",
+        type: "Grass",
+        lvl: 16,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png",
+      },
+      {
+        name: "Venusaur",
+        type: "Grass",
+        lvl: 36,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png",
       },
     ],
-    type: ["Psychic"],
+    abilities: [
+      {
+        name: "Overgrow",
+        description: "Powers up Grass-type moves when the Pokémon's HP is low.",
+      },
+    ],
+    type: ["Grass", "Poison"],
     image:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
   },
   {
     id: 4,
-    name: "Gengar",
-    lvl: 45,
-    evolutionId: 4,
-    abilities: [
+    name: "Pidgey",
+    lvl: 3,
+    evolutions: [
       {
-        name: "Cursed Body",
-        description: "May disable a move used on the Pokémon.",
+        name: "Pidgeotto",
+        type: ["Normal", "Flying"],
+        lvl: 18,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/17.png",
+      },
+      {
+        name: "Pidgeot",
+        type: ["Normal", "Flying"],
+        lvl: 36,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/18.png",
       },
     ],
-    type: ["Ghost", "Poison"],
+    abilities: [
+      {
+        name: "Keen Eye",
+        description: "Prevents the Pokémon from losing accuracy.",
+      },
+    ],
+    type: ["Normal", "Flying"],
     image:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/16.png",
   },
   {
     id: 5,
-    name: "Dragonite",
-    lvl: 55,
-    evolutionId: 5,
-    abilities: [
+    name: "Rattata",
+    lvl: 3,
+    evolutions: [
       {
-        name: "Inner Focus",
-        description: "The Pokémon is protected from flinching.",
+        name: "Raticate",
+        type: ["Normal"],
+        lvl: 20,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/20.png",
       },
     ],
-    type: ["Dragon", "Flying"],
+    abilities: [
+      {
+        name: "Run Away",
+        description: "Enables a sure getaway from wild Pokémon.",
+      },
+    ],
+    type: ["Normal"],
     image:
-      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png",
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/19.png",
+  },
+  {
+    id: 6,
+    name: "Spearow",
+    lvl: 5,
+    evolutions: [
+      {
+        name: "Fearow",
+        type: ["Normal", "Flying"],
+        lvl: 20,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/22.png",
+      },
+    ],
+    abilities: [
+      {
+        name: "Keen Eye",
+        description: "Prevents the Pokémon from losing accuracy.",
+      },
+    ],
+    type: ["Normal", "Flying"],
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/21.png",
+  },
+  {
+    id: 7,
+    name: "Ekans",
+    lvl: 6,
+    evolutions: [
+      {
+        name: "Arbok",
+        type: ["Poison"],
+        lvl: 22,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/24.png",
+      },
+    ],
+    abilities: [
+      { name: "Intimidate", description: "Lowers the opponent's Attack stat." },
+    ],
+    type: ["Poison"],
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png",
   },
 ];
 

@@ -13,9 +13,14 @@ function App() {
   return (
     <>
       <nav className="flex justify-between items-center absolute w-full px-[3rem] py-2rem gap-[20px]">
-        <p className="text-[40px]">Pókedex lite</p>
+        <p className="text-[20px] md:text-[35px] font-extrabold">Pókedex lite</p>
         {loggedIn ? (
-          <NavLink to={"/"}>
+          <NavLink
+            className={"flex flex-col justify-center items-center"}
+            onClick={() => logOut()}
+            to={"/"}
+          >
+            <p>Cerrar sesión</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="icon icon-tabler icon-tabler-logout"
@@ -27,7 +32,6 @@ function App() {
               fill="none"
               stroke-linecap="round"
               stroke-linejoin="round"
-              onClick={() => logOut()}
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
@@ -64,7 +68,7 @@ function App() {
             <Route path="/" element={<Login />} />
           )}
           {loggedIn && (
-            <Route path="/details-pokemon" element={<DetailsPokemon />} />
+            <Route path="/details-pokemon/:id" element={<DetailsPokemon />} />
           )}
         </Routes>
       </Main>
