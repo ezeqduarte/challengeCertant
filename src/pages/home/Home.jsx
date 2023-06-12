@@ -63,7 +63,14 @@ export default function Home() {
 
   return (
     <>
-      {popUp && <PopUpNewPokemon />}
+      {popUp && (
+        <PopUpNewPokemon
+          refresh={refresh}
+          setRefresh={setRefresh}
+          popUp={popUp}
+          setPopUp={setPopUp}
+        />
+      )}
 
       <h2 className="text-center font-bold text-[28px] pt-[8rem]">
         ¡Hello Pokémon Trainer!

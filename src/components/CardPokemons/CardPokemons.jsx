@@ -17,7 +17,11 @@ export default function CardPokemons({ pokemon }) {
             ))}
           </div>
         </div>
-        <img src={pokemon.image} alt="" />
+        <img
+          className="w-[298px] h-[298px]"
+          src={pokemon.image}
+          alt={pokemon.id}
+        />
         <div className="flex flex-col justify-center  items-center">
           <span>Level</span>
           <p className="text-medium bg-gray-200  border rounded-full px-[15px] text-[30px]">

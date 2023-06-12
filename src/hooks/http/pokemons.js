@@ -5,5 +5,6 @@ export const usePokemonsRequest = () => {
 };
 
 export const useNewPokemonRequest = () => {
-  return (newPokemon) => apiClient.post(`pokemon`, newPokemon);
+  return (newPokemon, userId) =>
+    apiClient.post(`pokemon`, { pokemon: newPokemon, userId });
 };

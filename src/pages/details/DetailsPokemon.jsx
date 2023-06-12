@@ -20,8 +20,8 @@ export default function DetailsPokemon() {
         He is {pokemon.name}!
       </h2>
       <div className="flex flex-col lg:flex-row lg:justify-evenly lg:w-full justify-center items-center">
-        <img className="inline-block" src={pokemon.image} alt={pokemon.id} />
-        <div className="flex flex-col  divide-y text-[18px] flex-col w-full">
+        <img className="inline-block max-w-[475px] max-h-[475px]" src={pokemon.image} alt={pokemon.id} />
+        <div className="flex flex-col  divide-y text-[18px] px-[20px] flex-col w-full">
           <div className="pt-5 pb-3">
             <h3 className="font-semibold">Level:</h3>
             <p>- {pokemon.lvl}</p>

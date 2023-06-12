@@ -1,10 +1,20 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import AddProperty from "../AddProperty/AddProperty";
+import { usePokemonsUser } from "../../store/usePokemonsStore";
+import { useNewPokemonRequest } from "../../hooks/http/pokemons";
+import { useUserId } from "../../store/useLoginStore";
 
-export default function PopUpNewPokemon() {
-  /* const [typesQuantity, setTypesQuantity] = useState(1);
-  const [abilitiesQuantity, setAbilitiesQuantity] = useState(1);
-  const [evolutionsQuantity, setEvolutionsQuantity] = useState(1); */
+export default function PopUpNewPokemon({
+  refresh,
+  setRefresh,
+  popUp,
+  setPopUp,
+}) {
+  const newPokemonRequest = useNewPokemonRequest();
+  const pokemonsUserGlobal = usePokemonsUser();
+  const userId = useUserId();
+
+  /*/Propiedades de mi pokemon a setear/*/
 
   const [name, setName] = useState("");
   const [lvl, setLvl] = useState(null);
@@ -20,38 +30,7 @@ export default function PopUpNewPokemon() {
   ]);
   const [image, setImage] = useState("");
 
-  const [pokemonData, setPokemonData] = useState({
-    id: 7,
-    name: "",
-    lvl: 0,
-    type: [""],
-    abilities: [
-      { name: "Intimidate", description: "Lowers the opponent's Attack stat." },
-    ],
-    evolutions: [
-      {
-        name: "",
-        type: "",
-        lvl: 22,
-        image: "",
-      },
-    ],
-    image: "",
-  });
-
-  const submiteNewPokemon = (event) => {
-    event.preventDefault();
-    const newPokemon = {
-      id: 7,
-      name: name,
-      lvl: lvl,
-      type: types,
-      abilities: abilities,
-      evolutions: evolutions,
-      image: image,
-    };
-    console.log(newPokemon);
-  };
+  /*/evento manejador de la edicion de las habilidades/*/
 
   const handleChangeAbilities = (value, field, index) => {
     setAbilities((abilities) =>
@@ -61,9 +40,13 @@ export default function PopUpNewPokemon() {
     );
   };
 
+  /*/evento manejador de la edicion de los tipos/*/
+
   const handleChangeTypes = (value, index) => {
     setTypes((types) => types.map((type, i) => (i === index ? value : type)));
   };
+
+  /*/evento manejador de la edicion de las evoluciones/*/
 
   const handleChangeEvolutions = (value, field, index) => {
     setEvolutions((evolutions) =>
@@ -71,6 +54,24 @@ export default function PopUpNewPokemon() {
         i === index ? { ...evolution, [field]: value } : evolution
       )
     );
+  };
+
+  /*/funcion para cargar el pokemon /*/
+
+  const submiteNewPokemon = async (event) => {
+    event.preventDefault();
+    const newPokemon = {
+      id: pokemonsUserGlobal.length + 1,
+      name: name,
+      lvl: lvl,
+      type: types,
+      abilities: abilities,
+      evolutions: evolutions,
+      image: image,
+    };
+    newPokemonRequest(newPokemon, userId);
+    setRefresh(!refresh);
+    setPopUp(!popUp);
   };
 
   return (
@@ -90,7 +91,7 @@ export default function PopUpNewPokemon() {
           <input
             onChange={(e) => setImage(e.target.value)}
             className="grow  py-1"
-            type="file"
+            type="text"
           />
         </label>
         <label className="w-full gap-3 flex justify-between">
@@ -198,26 +199,6 @@ export default function PopUpNewPokemon() {
             set={() => setEvolutions((evolutions) => evolutions.concat([""]))}
           ></AddProperty>
         </p>
-        {/* {Array.from({ length: evolutionsQuantity }, (_, index) => (
-          <>
-            <label key={index} className="w-full flex flex-col justify-between">
-              Name of evolution {index + 1}:
-              <inputclassName="grow border p-1" type="text" />
-            </label>
-            <label key={index} className="w-full flex flex-col justify-between">
-              Level of evolution {index + 1}:
-              <inputclassName="grow border p-1" type="number" />
-            </label>
-            <label key={index} className="w-full flex flex-col justify-between">
-              Type of evolution {index + 1}:
-              <inputclassName="grow border p-1" type="text" />
-            </label>
-            <label>
-              Image of evolution {index + 1}:
-              <inputclassName="grow border p-1" type="file" />
-            </label>
-          </>
-        ))} */}
 
         {evolutions.map((evolution, index) => (
           <>
@@ -275,7 +256,7 @@ export default function PopUpNewPokemon() {
                   }
                   value={evolution.image}
                   className="grow "
-                  type="file"
+                  type="text"
                 />
               </label>
             </fieldset>
