@@ -7,6 +7,7 @@ export default function Login() {
   const logIn = useLogIn();
   const logInRequest = useLoginRequest();
   const [password, setPassword] = useState("password");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const usernameValue = useRef("");
   const passwordValue = useRef("");
@@ -23,33 +24,38 @@ export default function Login() {
 
   const submitForm = (event) => {
     event.preventDefault();
-    logInRequest(usernameValue.current.value, passwordValue.current.value).then(
-      (res) => {
+    logInRequest(usernameValue.current.value, passwordValue.current.value)
+      .then((res) => {
         const userId = res.data.content?.userId;
         if (userId) logIn(userId);
-      }
-    );
+      })
+      .catch((err) => {
+        if (err?.response.data.description) {
+          setErrorMessage(err?.response.data.description);
+        }
+      });
   };
 
   return (
     <section className="section-login flex flex-col gap-10 ">
-      <h2 className="text-[28px]">¡Welcome to Pókedex Lite!</h2>
+      <h2 className="text-[28px]">Welcome to Pókedex Lite!</h2>
       <form onSubmit={submitForm} className="form-login">
-        <label class="block">
-          <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+        <label className="block">
+          <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
             Username
           </span>
           <input
             type="text"
             ref={usernameValue}
-            class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+            className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
             placeholder="Insert your username"
+            required
           />
         </label>
         <fieldset className="relative">
           <label>
-            <label class="block">
-              <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+            <label className="block">
+              <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                 Password
               </span>
               <input
@@ -57,6 +63,7 @@ export default function Login() {
                 ref={passwordValue}
                 className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1 "
                 placeholder="Insert your password"
+                required
               />
             </label>
 
@@ -125,6 +132,9 @@ export default function Login() {
           Login
         </button>
       </form>
+      {errorMessage && (
+        <p className="font-bold text-red-800">* {errorMessage}</p>
+      )}
     </section>
   );
 }

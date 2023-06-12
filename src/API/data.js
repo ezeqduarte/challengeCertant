@@ -185,6 +185,30 @@ const pokemonData = [
     image:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/23.png",
   },
+  {
+    id: 8,
+    name: "Mew",
+    lvl: 50,
+    evolutions: [
+      {
+        name: "Mewtwo",
+        type: ["Psychic"],
+        lvl: 70,
+        image:
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
+      },
+    ],
+    abilities: [
+      {
+        name: "Synchronize",
+        description: "Passes on a burn, poison, or paralysis to the opponent.",
+      },
+      { name: "Psychic", description: "Raises Special Attack in a pinch." },
+    ],
+    type: ["Psychic"],
+    image:
+      "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png",
+  },
 ];
 
 const usersPokemons = new Map([

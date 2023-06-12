@@ -26,7 +26,7 @@ app.post("/login", (req, res) => {
     });
   }
 
-  return res.status(401).json({ description: "Invalid credentials" });
+  return res.status(400).json({ description: "Invalid credentials" });
 });
 
 /*/ Pokemon /*/
@@ -51,7 +51,7 @@ app.post("/pokemon", validateUserId, (req, res) => {
   });
 });
 
-app.put("/pokemon", validateUserId, (req, res) => {
+app.patch("/pokemon", validateUserId, (req, res) => {
   const { pokemon, userId } = req.body;
   const editedPokemons = [...usersPokemons.get(userId)].map((p) =>
     p.id === pokemon.id ? pokemon : p

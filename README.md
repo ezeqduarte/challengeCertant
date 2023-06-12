@@ -6,34 +6,34 @@ Tras consultar con la comunidad de Pokémon, Certant ha detectado un aumento en 
 
 ## Requisitos
 
-Como desarrollador principal en este proyecto crítico, tu trabajo consiste en crear una aplicación Angular teniendo en cuenta los siguientes requisitos:
+Como desarrollador principal en este proyecto, mi trabajo fue crear una aplicación React teniendo en cuenta los siguientes requisitos:
 
-- Si ningún usuario ha iniciado sesión, la aplicación debe redirigir a la página de inicio de sesión (se puede utilizar la presencia de una ID de usuario para determinar si un usuario ha iniciado sesión o no).
-- Un usuario que haya iniciado sesión debe poder cerrar sesión en la aplicación.
-- La aplicación debe ser capaz de mostrar una lista de todos los Pokémon en la Base de Datos Global para el usuario que ha iniciado sesión. Para cada Pokémon, la aplicación debe mostrar:
+- Si ningún usuario ha iniciado sesión, la aplicación debe redirigir a la página de inicio de sesión.
+- Un usuario que haya iniciado sesión puede cerrar sesión en la aplicación.
+- La aplicación muestra una lista de todos los Pokémon en la Base de Datos para el usuario que ha iniciado sesión. Para cada Pokémon, la aplicación muestra:
   - Nombre
   - Tipo/s
   - Nivel en el que se encuentra el Pokémon.
-- La aplicación debe ser capaz de mostrar los 2 aspectos más importantes de un Pokémon específico: "Habilidades" y "Evoluciones". Para cada posible evolución, la aplicación debe mostrar:
+- La aplicación muestra las habilidades y evoluciones. Para cada posible evolución, la aplicación muestra:
   - Nombre
-  - Tipo/s
+  - Tipo
   - Nivel en el que el Pokémon evoluciona a esa evolución.
-- La aplicación debe ser capaz de añadir un Pokémon recién descubierto a la Base de Datos Global.
-- La aplicación debe ser capaz de editar la información de un Pokémon (Nombre, añadir o eliminar un Tipo, añadir una nueva Evolución).
+- Dentro de la aplicación puedes añadir un Pokémon recién descubierto a la Base de Datos.
+- Tambien dentro de la aplicación puedes editar la información de un Pokémon.
 
-## Base de Datos Global
+## Aplicacion
 
-Con el fin de centralizar toda la información necesaria para esta Pokedex Lite, Certant te ha dado acceso a la Base de Datos Global, que se puede acceder en el siguiente punto final: [https://testing.certant.com/pokedex-api/pokemon](https://testing.certant.com/pokedex-api/pokemon).
+Los pasos a seguir para el correcto funcionamiento de la aplicacion:
+
+- npm i
+- npm run server
+- npm run dev
 
 ## Usuarios para Desarrollo
 
-Además, ya hay 2 usuarios que puedes utilizar para propósitos de desarrollo:
+Hay 2 usuarios que puedes utilizar para propósitos de desarrollo:
 
 - Nombre de usuario 1: entrenador
   Contraseña 1: contraseña
 - Nombre de usuario 2: maestro
   Contraseña 2: contraseña
-
-## Prototipo
-
-Por último, como sugerencia, el equipo de experiencia de usuario (UX) de Certant ha sido lo suficientemente generoso como para proporcionar un prototipo para esta aplicación Lite. Depende de ti, como desarrollador principal, decidir si lo utilizas o no, pero ten en cuenta que una aplicación con un buen aspecto siempre es agradable de tener y atrae a más usuarios a esta nueva plataforma.

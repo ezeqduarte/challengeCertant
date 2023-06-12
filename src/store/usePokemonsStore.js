@@ -10,12 +10,8 @@ const useLoginStore = create(
     (set, get) => ({
       ...initialState,
 
-      getPokemons: (pokemonsUser) => {
+      setPokemonsUser: (pokemonsUser) => {
         set({ pokemonsUser });
-      },
-
-      newPokemon: (newPokemons) => {
-        set({ pokemonsUser: newPokemons });
       },
     }),
     {
@@ -28,5 +24,5 @@ const useLoginStore = create(
 export const usePokemonsUser = () =>
   useLoginStore((store) => store.pokemonsUser);
 
-export const useGetPokemons = () => useLoginStore((store) => store.getPokemons);
-export const useNewPokemon = () => useLoginStore((store) => store.newPokemon);
+export const useSetPokemonsUser = () =>
+  useLoginStore((store) => store.setPokemonsUser);

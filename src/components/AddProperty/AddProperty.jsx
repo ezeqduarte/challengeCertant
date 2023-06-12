@@ -1,24 +1,27 @@
 import React from "react";
 
-export default function AddProperty({ text, set, condition }) {
+export default function AddProperty({ text, onClick, disabled = false }) {
   return (
     <>
       {text === "-" && (
-        <span
-          onClick={() => set()}
-          className="cursor-pointer font-bold bg-slate-200 border rounded-full px-2"
+        <button
+          onClick={onClick}
+          className="cursor-pointer w-[30px] flex justify-center items-center h-[30px] font-bold bg-slate-200 border rounded-full"
+          type="button"
+          disabled={disabled}
         >
           {text}
-        </span>
+        </button>
       )}
 
       {text === "+" && (
-        <span
-          onClick={() => set()}
-          className="cursor-pointer font-bold bg-slate-200 border rounded-full px-2"
+        <button
+          onClick={onClick}
+          className="cursor-pointer  w-[30px] h-[30px] flex justify-center items-center font-bold bg-slate-200 border rounded-full"
+          type="button"
         >
           {text}
-        </span>
+        </button>
       )}
     </>
   );
