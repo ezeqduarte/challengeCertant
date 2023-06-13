@@ -6,27 +6,27 @@ Tras consultar con la comunidad de Pokémon, Certant ha detectado un aumento en 
 
 ## Requisitos
 
-Como desarrollador principal en este proyecto, mi trabajo fue crear una aplicación React teniendo en cuenta los siguientes requisitos:
+Como desarrollador principal en este proyecto crítico, tu trabajo consiste en crear una aplicación Angular teniendo en cuenta los siguientes requisitos:
 
 - Si ningún usuario ha iniciado sesión, la aplicación debe redirigir a la página de inicio de sesión.
-- Un usuario que haya iniciado sesión puede cerrar sesión en la aplicación.
-- La aplicación muestra una lista de todos los Pokémon en la Base de Datos para el usuario que ha iniciado sesión. Para cada Pokémon, la aplicación muestra:
+- Un usuario que haya iniciado sesión debe poder cerrar sesión en la aplicación.
+- La aplicación debe ser capaz de mostrar una lista de todos los Pokémones para el usuario que ha iniciado sesión. Para cada Pokémon, la aplicación debe mostrar:
   - Nombre
   - Tipo/s
   - Nivel en el que se encuentra el Pokémon.
-- La aplicación muestra las habilidades y evoluciones. Para cada posible evolución, la aplicación muestra:
+- La aplicación debe ser capaz de mostrar "Habilidades" y "Evoluciones" de un Pokémon específico. Para cada posible evolución, la aplicación debe mostrar:
   - Nombre
-  - Tipo
+  - Tipo/s
   - Nivel en el que el Pokémon evoluciona a esa evolución.
-- Dentro de la aplicación puedes añadir un Pokémon recién descubierto a la Base de Datos.
-- Tambien dentro de la aplicación puedes editar la información de un Pokémon.
+- La aplicación debe ser capaz de añadir un Pokémon recién descubierto a la lista de Pokemones.
+- La aplicación debe ser capaz de editar la información de un Pokémon.
 
 ## Aplicacion
 
 Los pasos a seguir para el correcto funcionamiento de la aplicacion:
 
 - npm i
-- npm run server
+- npm run api
 - npm run dev
 
 ## Usuarios para Desarrollo

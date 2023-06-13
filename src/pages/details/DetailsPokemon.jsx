@@ -16,6 +16,9 @@ export default function DetailsPokemon() {
 
   return (
     <>
+      {popUp && !!pokemon && (
+        <PopUpPokemon pokemonEdit={pokemon} popUp={popUp} setPopUp={setPopUp} />
+      )}
       <div className="container min-h-screen mx-auto pt-[5rem] lg:pt-[0rem] pb-5 flex justify-center items-center flex-wrap content-center gap-5 ">
         <h2 className="text-[4rem] text-center w-full font-bold">
           He is {pokemon.name}!
@@ -63,9 +66,7 @@ export default function DetailsPokemon() {
           </div>
         </div>
       </div>
-      {popUp && !!pokemon && (
-        <PopUpPokemon pokemonEdit={pokemon} popUp={popUp} setPopUp={setPopUp} />
-      )}
+
       <ButtonEditCreatePokemon
         text={"Edit pokemon"}
         popUp={popUp}

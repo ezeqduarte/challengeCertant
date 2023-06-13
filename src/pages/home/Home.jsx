@@ -25,7 +25,6 @@ export default function Home() {
   return (
     <>
       {popUp && <PopUpPokemon popUp={popUp} setPopUp={setPopUp} />}
-
       <h2 className="text-center font-bold text-[28px] pt-[8rem]">
         Hello Pokémon Trainer!
       </h2>
