@@ -6,7 +6,7 @@ Tras consultar con la comunidad de Pokémon, Certant ha detectado un aumento en 
 
 ## Requisitos
 
-Como desarrollador principal en este proyecto crítico, tu trabajo consiste en crear una aplicación Angular teniendo en cuenta los siguientes requisitos:
+Como desarrollador principal en este proyecto crítico, tu trabajo consiste en crear una aplicación con React teniendo en cuenta los siguientes requisitos:
 
 - Si ningún usuario ha iniciado sesión, la aplicación debe redirigir a la página de inicio de sesión.
 - Un usuario que haya iniciado sesión debe poder cerrar sesión en la aplicación.
